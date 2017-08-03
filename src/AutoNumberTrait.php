@@ -6,7 +6,6 @@ use Alfa6661\AutoNumber\Observers\AutoNumberObserver;
 
 trait AutoNumberTrait
 {
-
     /**
      * Boot the soft deleting trait for a model.
      *
@@ -22,6 +21,5 @@ trait AutoNumberTrait
      *
      * @return array
      */
-    public abstract function getAutoNumberOptions();
-
+    abstract public function getAutoNumberOptions();
 }
