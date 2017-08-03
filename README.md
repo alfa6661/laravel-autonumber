@@ -1,5 +1,11 @@
 # Laravel AutoNumber
 
+[![Latest Stable Version](https://poser.pugx.org/alfa6661/laravel-autonumber/v/stable)](https://packagist.org/packages/alfa6661/laravel-autonumber)
+[![Total Downloads](https://poser.pugx.org/alfa6661/laravel-autonumber/downloads)](https://packagist.org/packages/alfa6661/laravel-autonumber)
+[![StyleCI](https://styleci.io/repos/99206904/shield)](https://styleci.io/repos/99206904)
+[![License](https://poser.pugx.org/alfa6661/laravel-autonumber/license)](https://packagist.org/packages/alfa6661/laravel-autonumber)
+
+
 Laravel package to create autonumber for Eloquent model
 
 # Installation
@@ -23,6 +29,12 @@ Publish the default configuration
 
 ```
 php artisan vendor:publish --provider='Alfa6661\AutoNumber\AutoNumberServiceProvider'
+```
+
+Running migration
+
+```
+php artisan migrate
 ```
 
 # Usage
