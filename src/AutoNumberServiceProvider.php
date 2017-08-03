@@ -15,11 +15,11 @@ class AutoNumberServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../migrations/' => database_path('migrations')
+            __DIR__.'/../migrations/' => database_path('migrations'),
         ]);
 
         $this->publishes([
-            __DIR__ . '/../config/autonumber.php' => config_path('autonumber.php'),
+            __DIR__.'/../config/autonumber.php' => config_path('autonumber.php'),
         ]);
     }
 

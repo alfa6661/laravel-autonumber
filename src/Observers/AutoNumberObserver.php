@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class AutoNumberObserver
 {
-
     /**
      * @var AutoNumber
      */
@@ -25,7 +24,7 @@ class AutoNumberObserver
 
     /**
      * @param \Illuminate\Database\Eloquent\Model $model
-     * @return boolean|null
+     * @return bool|null
      */
     public function saving(Model $model)
     {
@@ -44,5 +43,4 @@ class AutoNumberObserver
 
         return $generated;
     }
-
 }

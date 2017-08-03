@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class AutoNumber extends Model
 {
-
     /**
      * The attributes that are mass assignable.
      *
@@ -14,6 +13,6 @@ class AutoNumber extends Model
      */
     protected $fillable = [
         'name',
-        'number'
+        'number',
     ];
 }

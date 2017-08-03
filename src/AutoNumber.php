@@ -8,7 +8,6 @@ use InvalidArgumentException;
 
 class AutoNumber
 {
-
     /**
      * Generate unique name for autonumber identity.
      *
@@ -39,7 +38,7 @@ class AutoNumber
 
         foreach ($config as $key => $value) {
             if (empty($value)) {
-                throw new InvalidArgumentException($key . ' param cannot empty');
+                throw new InvalidArgumentException($key.' param cannot empty');
             }
         }
 
@@ -105,5 +104,4 @@ class AutoNumber
 
         return $model->isDirty($attributes);
     }
-
 }
