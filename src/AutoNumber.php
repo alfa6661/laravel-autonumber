@@ -53,12 +53,14 @@ class AutoNumber
      */
     private function getNextNumber($name)
     {
-        $autoNumber = AutoNumberModel::firstOrNew(
-            ['name' => $name],
-            ['number' => 1]
-        );
+        $autoNumber = AutoNumberModel::where('name', $name)->first();
 
-        if ($autoNumber->exists) {
+        if ($autoNumber === null) {
+            $autoNumber = new AutoNumberModel([
+                'name' => $name,
+                'number' => 1
+            ]);
+        } else {
             $autoNumber->number += 1;
         }
 
