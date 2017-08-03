@@ -58,7 +58,7 @@ class AutoNumber
         if ($autoNumber === null) {
             $autoNumber = new AutoNumberModel([
                 'name' => $name,
-                'number' => 1
+                'number' => 1,
             ]);
         } else {
             $autoNumber->number += 1;
