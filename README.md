@@ -12,7 +12,7 @@ composer require alfa6661/laravel-autonumber
 
 Register the ServiceProvider in `config/app.php`
 
-```
+```php
 'providers' => [
     // ...
     Alfa6661\AutoNumber\AutoNumberServiceProvider::class,
@@ -32,7 +32,7 @@ Your Eloquent models should use the `Alfa6661\AutoNumber\AutoNumberTrait` trait
 The trait contains an abstract method `getAutoNumberOptions()` that you must implement yourself.
 
 
-```
+```php
 use Alfa6661\AutoNumber\AutoNumberTrait;
     
 class Order extends Model
@@ -59,7 +59,7 @@ class Order extends Model
 
 You can also pass a `closure` for the format value.
 
-```
+```php
 public function getAutoNumberOptions()
 {
     return [
@@ -75,7 +75,7 @@ public function getAutoNumberOptions()
 
 ## Saving Model
 
-```
+```php
 $order = Order::create([
     'customer' => 'Mr. X',
 ]);
@@ -83,7 +83,7 @@ $order = Order::create([
 
 The order_number will be automatically generated based on the format given when saving the Order model.
 
-```
+```php
 echo $order->order_number;
 
 // SO/20170803/00001
