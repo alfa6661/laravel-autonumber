@@ -16,11 +16,11 @@ class AutoNumberServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../migrations/' => database_path('migrations'),
-        ]);
+        ], 'migrations');
 
         $this->publishes([
             __DIR__.'/../config/autonumber.php' => config_path('autonumber.php'),
-        ]);
+        ], 'config');
     }
 
     /**

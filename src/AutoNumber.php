@@ -28,7 +28,7 @@ class AutoNumber
     public function evaluateConfiguration(array $overrides = [])
     {
         $config = array_merge(
-            app('config')->get('autonumber'),
+            app('config')->get('autonumber', []),
             $overrides
         );
 
@@ -37,8 +37,8 @@ class AutoNumber
         }
 
         foreach ($config as $key => $value) {
-            if (empty($value)) {
-                throw new InvalidArgumentException($key.' param cannot empty');
+            if (is_null($value)) {
+                throw new InvalidArgumentException($key.' param cannot be null');
             }
         }
 
@@ -58,7 +58,7 @@ class AutoNumber
         if ($autoNumber === null) {
             $autoNumber = new AutoNumberModel([
                 'name' => $name,
-                'number' => 1
+                'number' => 1,
             ]);
         } else {
             $autoNumber->number += 1;
@@ -89,7 +89,7 @@ class AutoNumber
             $uniqueName = $this->generateUniqueName(
                 array_merge(
                     ['class' => get_class($model)],
-                    $config
+                    array_except($config, ['onUpdate'])
                 )
             );
 
