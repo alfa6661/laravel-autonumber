@@ -24,15 +24,15 @@ class AutoNumberObserver
 
     /**
      * @param \Illuminate\Database\Eloquent\Model $model
-     * @return bool|null
+     * @return null
      */
     public function saving(Model $model)
     {
         if (! config('autonumber.onUpdate', false) && $model->exists) {
-            return true;
+            return;
         }
 
-        return $this->generateAutoNumber($model);
+        $this->generateAutoNumber($model);
     }
 
     /**
