@@ -4,6 +4,8 @@ namespace Alfa6661\AutoNumber;
 
 use Alfa6661\AutoNumber\Models\AutoNumber as AutoNumberModel;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Config;
 use InvalidArgumentException;
 
 class AutoNumber
@@ -28,7 +30,7 @@ class AutoNumber
     public function evaluateConfiguration(array $overrides = [])
     {
         $config = array_merge(
-            app('config')->get('autonumber', []),
+            Config::get('autonumber', []),
             $overrides
         );
 
@@ -89,7 +91,7 @@ class AutoNumber
             $uniqueName = $this->generateUniqueName(
                 array_merge(
                     ['class' => get_class($model)],
-                    array_except($config, ['onUpdate'])
+                    Arr::except($config, ['onUpdate'])
                 )
             );
 
