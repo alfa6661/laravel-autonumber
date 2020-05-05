@@ -15,9 +15,9 @@
         }
     ],
     "require": {
-        "illuminate/config": "^5.1|^6.0|^7.0",
-        "illuminate/database": "^5.1|^6.0|^7.0",
-        "illuminate/support": "^5.1|^6.0|^7.0"
+        "illuminate/config": "^7.0",
+        "illuminate/database": "^7.0",
+        "illuminate/support": "^7.0"
     },
     "autoload": {
         "psr-4": {
