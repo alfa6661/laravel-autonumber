@@ -78,7 +78,7 @@ public function getAutoNumberOptions()
         'order_number' => [
             'format' => function () {
                 return 'SO/' . date('Ymd') . '/?'; // autonumber format. '?' will be replaced with the generated number.
-            }
+            },
             'length' => 5 // The number of digits in the autonumber
         ]
     ];
